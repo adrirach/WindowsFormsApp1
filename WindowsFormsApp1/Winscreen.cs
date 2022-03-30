@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class gamoverscreen : UserControl
+    public partial class Winscreen : UserControl
     {
-        public gamoverscreen()
+        public Winscreen()
         {
             InitializeComponent();
-        }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
