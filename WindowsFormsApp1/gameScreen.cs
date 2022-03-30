@@ -14,51 +14,59 @@ namespace WindowsFormsApp1
     public partial class gameScreen : UserControl
     {
 
-        
+
         bool wkey = false;
         bool akey = false;
         bool skey = false;
         bool dkey = false;
-      
+
         int sidey = 200;
         int sidex = 200;
         int sideHeight = 1;
         int sideWidth = 100;
+       
         int sidey2 = 200;
         int sidex2 = 350;
         int sideHeight2 = 1;
         int sideWidth2 = 100;
+        
         int sidey3 = 390;
         int sidex3 = 120;
         int sideHeight3 = 1;
         int sideWidth3 = 80;
+       
         int sidey4 = 200;
         int sidex4 = 200;
         int sideHeight4 = 190;
         int sideWidth4 = 1;
+        
         int sidey5 = 200;
         int sidex5 = 450;
         int sideHeight5 = 250;
         int sideWidth5 = 1;
+        
         int sidey6 = 450;
         int sidex6 = 200;
         int sideHeight6 = 1;
         int sideWidth6 = 250;
+       
         int sidey7 = 390;
         int sidex7 = 120;
         int sideHeight7 = 60;
         int sideWidth7 = 1;
+       
         int sidey8 = 450;
         int sidex8 = 120;
         int sideHeight8 = 1;
         int sideWidth8 = 80;
+        
         int sidey9 = 200;
         int sidex9 = 220;
         int sideHeight9 = 250;
         int sideWidth9 = 1;
+       
         int playerx = 142;
         int playery = 400;
-   
         int playerspeedy = 4;
         int playerspeedx = 4;
         int playerWidth = 30;
@@ -71,10 +79,13 @@ namespace WindowsFormsApp1
 
         int ballx2 = 250;
         int bally2 = 390;
+        
         int ballx3 = 250;
         int bally3 = 230;
+       
         int ballx4 = 410;
         int bally4 = 270;
+       
         int ballx5 = 250;
         int bally5 = 310;
 
@@ -85,43 +96,33 @@ namespace WindowsFormsApp1
         public gameScreen()
         {
             InitializeComponent();
-           
+
         }
-      
-
-   
-
         private void gameTImer_Tick(object sender, EventArgs e)
         {
-          
-         
-           
-    
-
-
-
-
-
+            // moves player with wasd
             if (akey == true)
             {
                 playerx -= playerspeedx;
             }
 
-            if (dkey == true )
+            if (dkey == true)
             {
-              playerx += playerspeedx;
+                playerx += playerspeedx;
             }
 
-                      if (wkey == true )
+            if (wkey == true)
             {
                 playery -= playerspeedy;
             }
 
-            if (skey == true )
+            if (skey == true)
             {
-              playery+= playerspeedy;
+                playery += playerspeedy;
             }
-
+         
+            
+            // moves the balls 
             ballx -= ballspeed;
             ballx2 += ballspeed;
             ballx3 += ballspeed;
@@ -129,7 +130,9 @@ namespace WindowsFormsApp1
             ballx5 += ballspeed;
             Refresh();
 
-                Rectangle sideRec = new Rectangle(sidex, sidey, sideWidth, sideHeight);
+
+            //makes  all the collison 
+            Rectangle sideRec = new Rectangle(sidex, sidey, sideWidth, sideHeight);
             Rectangle sideRec2 = new Rectangle(sidex2, sidey2, sideWidth2, sideHeight2);
             Rectangle sideRec3 = new Rectangle(sidex3, sidey3, sideWidth3, sideHeight3);
             Rectangle sideRec4 = new Rectangle(sidex4, sidey4, sideWidth4, sideHeight4);
@@ -145,9 +148,15 @@ namespace WindowsFormsApp1
             Rectangle ballRec4 = new Rectangle(ballx4, bally4, ballsize, ballsize);
             Rectangle ballRec5 = new Rectangle(ballx5, bally5, ballsize, ballsize);
             Rectangle goalRec = new Rectangle(goalx, goaly, goalsize, goalsize);
+
+
+         
+            
+            
+            // adding collising with all sides with the player then playing a sound if it comes in contact
             if (playerRec.IntersectsWith(sideRec))
             {
-               gameTImer.Enabled = false;
+                gameTImer.Enabled = false;
                 Form1.ChangeScreen(this, new gamoverscreen());
                 SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
 
@@ -209,12 +218,16 @@ namespace WindowsFormsApp1
 
                 player.Play();
             }
+          
+            
+          
+            
+            
+            // moves the ball back to the other side
             if (ballRec.IntersectsWith(sideRec5))
             {
-               
-         
-                    ballspeed *= -1;
-                
+                ballspeed *= -1;
+
             }
             if (ballRec.IntersectsWith(sideRec9))
             {
@@ -227,7 +240,7 @@ namespace WindowsFormsApp1
             }
             if (ballRec2.IntersectsWith(sideRec9))
             {
-                ballspeed *= -1 ;
+                ballspeed *= -1;
             }
             if (ballRec3.IntersectsWith(sideRec5))
             {
@@ -235,7 +248,7 @@ namespace WindowsFormsApp1
             }
             if (ballRec3.IntersectsWith(sideRec9))
             {
-                
+
                 ballspeed *= -1;
             }
             if (ballRec4.IntersectsWith(sideRec5))
@@ -255,9 +268,16 @@ namespace WindowsFormsApp1
                 ballspeed *= -1;
             }
 
+
+
+
+
+
+
+          // makes the when the balls hit the player the game stops and goes to the gamover screen and playes a sound 
             if (ballRec.IntersectsWith(playerRec))
             {
-               gameTImer.Enabled = false;
+                gameTImer.Enabled = false;
                 Form1.ChangeScreen(this, new gamoverscreen());
                 SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
 
@@ -296,6 +316,7 @@ namespace WindowsFormsApp1
 
                 player.Play();
             }
+            // if the player hits the gold rectangle it will change to the victory screen and play a sound
             if (goalRec.IntersectsWith(playerRec))
             {
                 gameTImer.Enabled = false;
@@ -308,7 +329,7 @@ namespace WindowsFormsApp1
 
         }
 
-
+        // sees if the keys are pressed  down
         private void gameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
@@ -331,6 +352,7 @@ namespace WindowsFormsApp1
 
         private void gameScreen_KeyUp(object sender, KeyEventArgs e)
         {
+            // sees if the keys are up
             switch (e.KeyCode)
             {
                 case Keys.W:
@@ -347,23 +369,26 @@ namespace WindowsFormsApp1
                     break;
             }
         }
-            private void gameScreen_Paint(object sender, PaintEventArgs e)
-            {
-                e.Graphics.FillRectangle(Brushes.Salmon, 120, 390, 80, 60);
-           
+        private void gameScreen_Paint(object sender, PaintEventArgs e)
+        {
+            // paints all the rectangles 
+            e.Graphics.FillRectangle(Brushes.Salmon, 120, 390, 80, 60);
             e.Graphics.FillRectangle(Brushes.LightBlue, 200, 200, 250, 250);
-                e.Graphics.FillRectangle(Brushes.LightGreen, 300, 150, 50, 50);
+            e.Graphics.FillRectangle(Brushes.LightGreen, 300, 150, 50, 50);
             e.Graphics.FillRectangle(Brushes.Gold, goalx, goaly, goalsize, goalsize);
+          
             e.Graphics.FillRectangle(Brushes.Red, sidex, sidey, sideWidth, sideHeight);
-                e.Graphics.FillRectangle(Brushes.Red, sidex2, sidey2, sideWidth2, sideHeight2);
-                e.Graphics.FillRectangle(Brushes.Red, sidex3, sidey3, sideWidth3, sideHeight3);
-                e.Graphics.FillRectangle(Brushes.Red, sidex4, sidey4, sideWidth4, sideHeight4);
-                e.Graphics.FillRectangle(Brushes.Red, sidex5, sidey5, sideWidth5, sideHeight5);
-                e.Graphics.FillRectangle(Brushes.Red, sidex6, sidey6, sideWidth6, sideHeight6);
-                e.Graphics.FillRectangle(Brushes.Red, sidex7, sidey7, sideWidth7, sideHeight7);
-                e.Graphics.FillRectangle(Brushes.Red, sidex8, sidey8, sideWidth8, sideHeight8);
-                e.Graphics.FillRectangle(Brushes.Black, playerx, playery, playerWidth, playerHeight);
+            e.Graphics.FillRectangle(Brushes.Red, sidex2, sidey2, sideWidth2, sideHeight2);
+            e.Graphics.FillRectangle(Brushes.Red, sidex3, sidey3, sideWidth3, sideHeight3);
+            e.Graphics.FillRectangle(Brushes.Red, sidex4, sidey4, sideWidth4, sideHeight4);
+            e.Graphics.FillRectangle(Brushes.Red, sidex5, sidey5, sideWidth5, sideHeight5);
+            e.Graphics.FillRectangle(Brushes.Red, sidex6, sidey6, sideWidth6, sideHeight6);
+            e.Graphics.FillRectangle(Brushes.Red, sidex7, sidey7, sideWidth7, sideHeight7);
+            e.Graphics.FillRectangle(Brushes.Red, sidex8, sidey8, sideWidth8, sideHeight8);
             e.Graphics.FillRectangle(Brushes.Transparent, sidex9, sidey9, sideWidth9, sideHeight9);
+           
+            e.Graphics.FillRectangle(Brushes.Black, playerx, playery, playerWidth, playerHeight);
+          
             e.Graphics.FillRectangle(Brushes.Red, ballx, bally, ballsize, ballsize);
             e.Graphics.FillRectangle(Brushes.Red, ballx2, bally2, ballsize, ballsize);
             e.Graphics.FillRectangle(Brushes.Red, ballx3, bally3, ballsize, ballsize);
@@ -376,5 +401,5 @@ namespace WindowsFormsApp1
 
         }
     }
-    }
+}
 

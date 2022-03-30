@@ -44,12 +44,11 @@
             this.help.AutoSize = true;
             this.help.BackColor = System.Drawing.Color.Transparent;
             this.help.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.help.Location = new System.Drawing.Point(669, 451);
+            this.help.Location = new System.Drawing.Point(639, 460);
             this.help.Name = "help";
             this.help.Size = new System.Drawing.Size(197, 29);
             this.help.TabIndex = 0;
             this.help.Text = "YOU GOT THIS";
-            this.help.Visible = false;
             this.help.Click += new System.EventHandler(this.label1_Click);
             // 
             // gameScreen

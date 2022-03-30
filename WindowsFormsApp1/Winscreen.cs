@@ -17,6 +17,10 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-
+        private void Exitbutton_Click(object sender, EventArgs e)
+        {
+            // when you click the exit button you will close the game
+            Application.Exit();
+        }
     }
 }

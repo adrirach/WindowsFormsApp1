@@ -21,11 +21,12 @@ namespace WindowsFormsApp1
 
         private void playbutton_Click(object sender, EventArgs e)
         {
-
+            // when the play button is clicked go to the  game
             Form1.ChangeScreen(this, new gameScreen());
         }
         private void Exitbutton_Click(object sender, EventArgs e)
         {
+            // when you click the exit button you will close the game
             Application.Exit();
         }
     }
