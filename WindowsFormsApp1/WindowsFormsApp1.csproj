@@ -114,19 +114,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ninja.bmp" />
+    <None Include="Resources\winscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mixkit-ow-exclamation-of-pain-2204 %281%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\victory-royale.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ninja.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fortnitereal.jpg" />
+    <None Include="Resources\play.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fortnite.jpg" />
+    <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fortnitereals.jpg" />
+    <None Include="Resources\replay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defualt.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

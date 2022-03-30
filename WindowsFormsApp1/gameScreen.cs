@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace WindowsFormsApp1
 {
@@ -70,11 +71,11 @@ namespace WindowsFormsApp1
 
         int ballx2 = 250;
         int bally2 = 390;
-        int ballx3 = 410;
+        int ballx3 = 250;
         int bally3 = 230;
-        int ballx4 = 250;
+        int ballx4 = 410;
         int bally4 = 270;
-        int ballx5 = 410;
+        int ballx5 = 250;
         int bally5 = 310;
 
         int goalsize = 10;
@@ -92,7 +93,15 @@ namespace WindowsFormsApp1
 
         private void gameTImer_Tick(object sender, EventArgs e)
         {
+          
+         
            
+    
+
+
+
+
+
             if (akey == true)
             {
                 playerx -= playerspeedx;
@@ -103,8 +112,7 @@ namespace WindowsFormsApp1
               playerx += playerspeedx;
             }
 
-            //move player 2 
-            if (wkey == true )
+                      if (wkey == true )
             {
                 playery -= playerspeedy;
             }
@@ -116,9 +124,9 @@ namespace WindowsFormsApp1
 
             ballx -= ballspeed;
             ballx2 += ballspeed;
-            ballx3 -= ballspeed;
-            ballx4 += ballspeed;
-            ballx5 -= ballspeed;
+            ballx3 += ballspeed;
+            ballx4 -= ballspeed;
+            ballx5 += ballspeed;
             Refresh();
 
                 Rectangle sideRec = new Rectangle(sidex, sidey, sideWidth, sideHeight);
@@ -140,38 +148,73 @@ namespace WindowsFormsApp1
             if (playerRec.IntersectsWith(sideRec))
             {
                gameTImer.Enabled = false;
+                Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (playerRec.IntersectsWith(sideRec2))
             {
                 gameTImer.Enabled = false;
+                Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (playerRec.IntersectsWith(sideRec3))
             {
                 gameTImer.Enabled = false;
+                Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (playerRec.IntersectsWith(sideRec4))
             {
                 gameTImer.Enabled = false;
+                Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (playerRec.IntersectsWith(sideRec5))
             {
                 gameTImer.Enabled = false;
+                Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (playerRec.IntersectsWith(sideRec6))
             {
                 gameTImer.Enabled = false;
+                Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (playerRec.IntersectsWith(sideRec7))
             {
                 gameTImer.Enabled = false;
+                Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (playerRec.IntersectsWith(sideRec8))
             {
                 gameTImer.Enabled = false;
+                Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (ballRec.IntersectsWith(sideRec5))
             {
-                ballspeed *= -1;
+               
+         
+                    ballspeed *= -1;
+                
             }
             if (ballRec.IntersectsWith(sideRec9))
             {
@@ -180,10 +223,11 @@ namespace WindowsFormsApp1
             if (ballRec2.IntersectsWith(sideRec5))
             {
                 ballspeed *= -1;
+
             }
             if (ballRec2.IntersectsWith(sideRec9))
             {
-                ballspeed *= -1;
+                ballspeed *= -1 ;
             }
             if (ballRec3.IntersectsWith(sideRec5))
             {
@@ -191,6 +235,7 @@ namespace WindowsFormsApp1
             }
             if (ballRec3.IntersectsWith(sideRec9))
             {
+                
                 ballspeed *= -1;
             }
             if (ballRec4.IntersectsWith(sideRec5))
@@ -214,33 +259,50 @@ namespace WindowsFormsApp1
             {
                gameTImer.Enabled = false;
                 Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (ballRec2.IntersectsWith(playerRec))
             {
 
                 gameTImer.Enabled = false;
                 Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (ballRec3.IntersectsWith(playerRec))
             {
                 gameTImer.Enabled = false;
                 Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (ballRec4.IntersectsWith(playerRec))
             {
                 gameTImer.Enabled = false;
                 Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (ballRec5.IntersectsWith(playerRec))
             {
                 gameTImer.Enabled = false;
                 Form1.ChangeScreen(this, new gamoverscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loss);
+
+                player.Play();
             }
             if (goalRec.IntersectsWith(playerRec))
             {
                 gameTImer.Enabled = false;
                 Form1.ChangeScreen(this, new Winscreen());
+                SoundPlayer player = new SoundPlayer(Properties.Resources.victory);
 
+                player.Play();
             }
 
 
@@ -307,6 +369,11 @@ namespace WindowsFormsApp1
             e.Graphics.FillRectangle(Brushes.Red, ballx3, bally3, ballsize, ballsize);
             e.Graphics.FillRectangle(Brushes.Red, ballx4, bally4, ballsize, ballsize);
             e.Graphics.FillRectangle(Brushes.Red, ballx5, bally5, ballsize, ballsize);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

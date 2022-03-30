@@ -63,9 +63,9 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fortnite {
+        internal static System.Drawing.Bitmap defualt {
             get {
-                object obj = ResourceManager.GetObject("fortnite", resourceCulture);
+                object obj = ResourceManager.GetObject("defualt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,28 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fortnitereal {
+        internal static System.Drawing.Bitmap exit {
             get {
-                object obj = ResourceManager.GetObject("fortnitereal", resourceCulture);
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream loss {
+            get {
+                return ResourceManager.GetStream("loss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ninja {
+            get {
+                object obj = ResourceManager.GetObject("ninja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +102,9 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fortnitereals {
+        internal static System.Drawing.Bitmap play {
             get {
-                object obj = ResourceManager.GetObject("fortnitereals", resourceCulture);
+                object obj = ResourceManager.GetObject("play", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +112,28 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ninja1 {
+        internal static System.Drawing.Bitmap replay {
             get {
-                object obj = ResourceManager.GetObject("ninja1", resourceCulture);
+                object obj = ResourceManager.GetObject("replay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream victory {
+            get {
+                return ResourceManager.GetStream("victory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap winscreen {
+            get {
+                object obj = ResourceManager.GetObject("winscreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -21,5 +21,11 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void playagain_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeScreen(this, new gameScreen());
+            
+        }
     }
 }
